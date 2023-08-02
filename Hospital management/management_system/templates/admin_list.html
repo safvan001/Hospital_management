@@ -1,0 +1,23 @@
+ <!-- Extend your base template or create a new one -->
+
+{% block content %}
+  <h2>Admin List</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+    {% for admin in admins %}
+    <tr>
+      <td>{{ admin.name }}</td>
+      <td>{{ admin.email }}</td>
+      <td>
+        <a href="{% url 'app:admin_edit' admin.pk %}">Edit</a>
+        <a href="{% url 'app:admin_delete' admin.pk %}">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <a href="{% url 'app:create_admin' %}">Create New Admin</a>
+{% endblock %}

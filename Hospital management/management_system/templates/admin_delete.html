@@ -1,0 +1,10 @@
+ <!-- Extend your base template or create a new one -->
+
+{% block content %}
+  <h2>Delete Admin</h2>
+  <p>Are you sure you want to delete {{ admin.name }}?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm Delete</button>
+  </form>
+{% endblock %}

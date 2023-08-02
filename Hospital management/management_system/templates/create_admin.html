@@ -1,0 +1,11 @@
+<!-- create_admin.html -->
+ <!-- Extend your base template or create a new one -->
+
+{% block content %}
+  <h2>Create Admin</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Admin</button>
+  </form>
+{% endblock %}
